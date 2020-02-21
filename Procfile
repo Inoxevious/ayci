@@ -1,1 +1,1 @@
-web: gunicorn ayci.wsgi --log-file -
+web: gunicorn cap.wsgi --log-file -
