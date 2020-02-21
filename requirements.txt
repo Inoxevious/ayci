@@ -11,3 +11,4 @@ wincertstore==0.2
 python-dotenv
 django-crispy-forms
 django-searchable-select
+django-extensions
