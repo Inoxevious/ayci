@@ -12,3 +12,4 @@ python-dotenv
 django-crispy-forms
 django-searchable-select
 django-extensions
+pip install Pillow
