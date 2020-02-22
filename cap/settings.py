@@ -177,3 +177,9 @@ EMAIL_HOST_PASSWORD = 'Greatse@1#'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+# This should already be in your settings.py
+django_heroku.settings(locals())
+# This is new
+del DATABASES['default']['OPTIONS']['sslmode']
