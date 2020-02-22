@@ -171,10 +171,10 @@ LOGIN_REDIRECT_URL = '/'
 
 
 
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST = 'smtp.pepipost.com'
+EMAIL_PORT = '25'
+EMAIL_HOST_USER = 'mdekb0hl'
+EMAIL_HOST_PASSWORD = 'Malin@1#'
 EMAIL_USE_TLS = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
