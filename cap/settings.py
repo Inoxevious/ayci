@@ -171,10 +171,10 @@ LOGIN_REDIRECT_URL = '/'
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Gmail SMTP Server
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'thirdproverb@gmail.com'
-EMAIL_HOST_PASSWORD = 'Greatse@1#'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_USE_TLS = True
 # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
