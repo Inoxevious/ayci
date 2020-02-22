@@ -171,12 +171,12 @@ LOGIN_REDIRECT_URL = '/'
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Gmail SMTP Server
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'mpasiinnocent@gmail.com'
+EMAIL_HOST = 'mail.3rdproverb.net'
+EMAIL_PORT = '465'
+EMAIL_HOST_USER = 'md@3rdproverb.net'
 EMAIL_HOST_PASSWORD = 'Greatse@1#'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
