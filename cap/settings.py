@@ -168,15 +168,15 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'ay/static')
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/'
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-# Gmail SMTP Server
+
+
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_USE_TLS = True
-# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
