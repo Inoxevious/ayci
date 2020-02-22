@@ -172,7 +172,7 @@ LOGIN_REDIRECT_URL = '/'
 
 
 EMAIL_HOST = 'smtp.pepipost.com'
-EMAIL_PORT = '25'
+EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'mdekb0hl'
 EMAIL_HOST_PASSWORD = 'Malin@1#'
 EMAIL_USE_TLS = True
