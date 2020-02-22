@@ -171,10 +171,10 @@ LOGIN_REDIRECT_URL = '/'
 
 
 
-EMAIL_HOST = 'smtp.pepipost.com'
+EMAIL_HOST = 'smtp-relay.sendinblue.com'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'mdekb0hl'
-EMAIL_HOST_PASSWORD = 'Malin@1#'
+EMAIL_HOST_USER = 'thirdproverb@gmail.com'
+EMAIL_HOST_PASSWORD = 'bQBqtLIRZ9XD4EGM'
 EMAIL_USE_TLS = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
