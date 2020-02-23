@@ -171,10 +171,10 @@ LOGIN_REDIRECT_URL = '/'
 
 
 
-EMAIL_HOST = 'smtp-relay.sendinblue.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'thirdproverb@gmail.com'
-EMAIL_HOST_PASSWORD = 'bQBqtLIRZ9XD4EGM'
+EMAIL_HOST_PASSWORD = 'Greatse@1#'
 EMAIL_USE_TLS = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
