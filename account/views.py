@@ -16,6 +16,8 @@ from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
 from django.contrib import messages, auth
 from  . choices import price_choices, bedroom_choices, state_choices, countries_choices, role_choices, writer_choices
+from django.utils.datastructures import MultiValueDictKeyError
+
 
 # Create your views here.
 # 
@@ -68,9 +70,25 @@ def register(request):
         email = request.POST['email']
         password = request.POST['password']
         password2 = request.POST['password2']
-        country = request.POST['country', dcountry ]
-        role = request.POST['role', drole]
-        postwriter = request.POST['writer', False]
+        try:
+            country = request.POST['country']
+        except MultiValueDictKeyError:
+            country = 'africa'
+            
+        try:
+            role = request.POST['role']
+        except MultiValueDictKeyError:
+            role = 'member'
+
+        try:
+            postwriter = request.POST['writer']
+        except MultiValueDictKeyError:
+            postwriter = False
+
+
+        
+        
+        
         
         writer = False
         updated_writer = writer
