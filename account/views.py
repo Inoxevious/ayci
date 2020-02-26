@@ -80,10 +80,11 @@ def register(request):
 
         if postwriter == 'yes':
             writer = True
-        
+        else:
+            writer = False
         
         updated_writer = writer
-        print('WRITERRRRRR:', writer)
+
 
         # Check if passwords match
         if password == password2:
