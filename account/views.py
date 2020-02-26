@@ -1,12 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import AccountUser
 from articles.models import Author
-from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm, DelegationForm
 from django.contrib.auth import  authenticate
@@ -19,7 +15,6 @@ from .tokens import account_activation_token
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
 from django.contrib import messages, auth
-from django.contrib.auth.models import User
 from  . choices import price_choices, bedroom_choices, state_choices, countries_choices, role_choices, writer_choices
 
 # Create your views here.
@@ -104,8 +99,10 @@ def register(request):
                     last_name = last_name )
                     user.save()
 
-                    user = User.objects.get(email = email)
-                    acc = AccountUser.objects.get(user_id = user.id)
+
+
+                    user = get_object_or_404(User, email = email)              
+                    acc = get_object_or_404(AccountUser, user_id = user.id)
                     acc.role = role
                     acc.country = country
                     acc.email = email
@@ -115,12 +112,7 @@ def register(request):
                     if updated_writer == True:
                         user.is_staff = True 
                         user.save()  
-                     
-
-
-
-
-
+                        
                     # Login after register
                     auth.login(request,user)
                     messages.success(request,"You are now logged in.")
