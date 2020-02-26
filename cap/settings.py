@@ -103,15 +103,15 @@ WSGI_APPLICATION = 'cap.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ay',
-        'USER' : 'Inoxevious Greats',
-        'PASSWORD': 'Greatse@1#',
-        'HOST': 'localhost',
-        }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ay',
+#         'USER' : 'Inoxevious Greats',
+#         'PASSWORD': 'Greatse@1#',
+#         'HOST': 'localhost',
+#         }
+# }
 DATABASES = {}
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
