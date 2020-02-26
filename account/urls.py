@@ -1,11 +1,18 @@
 from django.conf.urls import url
 from django.urls import path, include
-from .views import index, signup, home, activate, account_activation_sent
+from .views import index, signup, home, activate, account_activation_sent, register, logout, login, dashboard
+from . import views
 
 # SET THE NAMESPACE!
 app_name = 'account'
 # Be careful setting the name to just /login use userlogin instead!
 urlpatterns=[
+    path('dashboard/', dashboard, name = "dashboard"),
+    path('login/', login, name = "login"),
+    path('logout/', logout, name = "logout"),
+    path('register/', register, name = "register"),  
+
+
     path('signup/', signup, name='signup'),
     path('index/', index, name='index'),
     path('home/', home, name='home'),

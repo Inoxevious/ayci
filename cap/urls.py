@@ -17,10 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 
-from Farm.views import farmer
-from investmanager.views import investmanager, importer
-from account.views import index, signup
-from processor.views import processor
+from account.views import signup, register
+from pages.views import index
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -31,22 +29,19 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     # urls to user first dashboards
     path('admin/', admin.site.urls),
-    # path('', index, name='index'),
+    path('', index, name='index'),
     
-    path('', signup, name='signup'),
+    # path('', signup, name='signup'),
     path('signup', signup, name='signup'),
-    path('<int:user_id>/farmer/', farmer, name='farmer'),
-    path('<int:user_id>/processor/', processor, name='processor'),
-    path('<int:user_id>/investmanager/', investmanager, name='investmanager'),
-    
-    
+    path('register', register, name='register'),
    
+    
+    
 
 # urls to applications dashboards
     path('account/', include('account.urls')),
+    path('pages/', include('pages.urls')),
     # urls to applications dashboards
-    path('Farm/', include('Farm.urls')),
-    path('processor/', include('processor.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     url('^searchableselect/', include('searchableselect.urls')),
     

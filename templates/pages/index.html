@@ -1,0 +1,74 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<section>
+      <!-- Promo Block -->
+      <div class="container g-pt-100 g-pb-70">
+        <!-- News Section -->
+        <div class="u-heading-v3-1 g-mb-30">
+          <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Latest News</h2>
+        </div>
+
+        <div class="row g-mb-70">
+          {% for article in article %}
+          <div class="col-sm-6 col-lg-4 g-mb-30">
+           
+            <!-- Article -->
+            <article>
+              <img 
+              height="300" width="350"
+              
+              src="{{article.photo_main.url}}" 
+              alt="Image Description">
+
+              <div style="max-height: 150px; min-height: 50px;" class="g-brd-around g-brd-secondary-light-v2 g-bg-white g-pa-20">
+                <h3 class="g-font-size-14"><a class="u-link-v5 g-color-main g-color-primary--hover" href="{% url 'detail' article.id %}">{{article.title}}</a></h3>
+                <!-- <p class="g-font-size-13">{{article.summary}}</p> -->
+
+                <hr class="g-brd-secondary-light-v2 my-3">
+
+                <!-- Info -->
+                <ul class="d-flex list-inline mb-0">
+                  <li class="list-inline-item mx-0">
+                    <a class="d-inline-block g-color-secondary-dark-v1 g-color-primary--hover g-font-size-12 g-text-underline--none--hover g-pr-5 g-py-4" href="#!">
+                      <i class="align-middle mr-1 icon-medical-022 u-line-icon-pro"></i>
+                      5
+                    </a>
+                  </li>
+                  <li class="list-inline-item mr-0">
+                    <a class="d-inline-block g-color-secondary-dark-v1 g-color-primary--hover g-font-size-12 g-text-underline--none--hover g-px-5 g-py-4" href="#!">
+                      <i class="align-middle mr-1 icon-finance-206 u-line-icon-pro"></i>
+                      1
+                    </a>
+                  </li>
+                  <li class="list-inline-item ml-auto mr-0">
+                    <span class="d-inline-block g-color-secondary-dark-v1 g-font-size-12 g-px-5 g-py-4">
+                      <i class="align-middle mr-1 icon-education-097 u-line-icon-pro"></i>
+                      15 min ago
+                    </span>
+                  </li>
+                </ul>
+                <!-- End Info -->
+              </div>
+            </article>
+
+            <!-- End Article -->
+          </div>
+{% endfor %}
+          
+          
+        </div>
+        <!-- End News Section -->
+
+      </div>
+      <!-- End Promo Block -->
+    </section>
+    
+      {% include 'partials/_promo_block.html' %}
+      {% include 'partials/_recent_videos.html' %}
+     
+
+
+      {% endblock %}

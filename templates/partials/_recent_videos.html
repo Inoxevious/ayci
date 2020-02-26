@@ -1,0 +1,109 @@
+<section class=" g-py-50">
+ <!-- Recent Videos -->
+ <div style="margin:5%;" class="u-heading-v3-1 g-mb-30">
+    <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Recent Videos</h2>
+  </div>
+
+  <div style="margin:5%; margin-bottom: -5%;" class="row">
+    {% for vid in videos %}
+    <!-- Article Video -->
+    <div class="col-6 col-md-4 col-lg-3 g-mb-30">
+      <article>
+        <figure class="u-shadow-v25 g-pos-rel g-mb-20">
+          
+              <!-- HTML5 Example -->
+              <div class="embed-responsive embed-responsive-16by9 g-mb-60">
+                <video preload="auto" controls="controls" poster="{{ vid.photo_main.url }}">
+                    <source src="{{ vid.video.url }}" type="video/mp4;">
+                </video>
+              </div>
+              <!-- End HTML5 Example -->
+          
+          
+          <figcaption class="g-pos-abs g-top-10 g-left-10">
+            <a class="btn btn-xs u-btn-blue text-uppercase rounded-0" href="#!">{{vid.category}}</a>
+          </figcaption>
+
+        </figure>
+
+        <h3 class="g-font-size-16 g-mb-10">
+          <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#!">{{vid.title}}</a>
+        </h3>
+      </article>
+     
+    </div>
+    <!-- End Article Video -->
+    {% endfor %}
+   
+  </div>
+  <!-- End Recent Videos -->
+ <!-- Pagination -->
+ <div class="container g-pb-100">
+    <nav aria-label="Page Navigation">
+{% if videos.has_other_pages %}
+      <ul class="list-inline text-center mb-0">
+        <!-- back arrow -->
+        {% if listings.has_previous  %}
+        <li class="list-inline-item">
+          <a class="active u-pagination-v1__item g-width-30 g-height-30 g-brd-secondary-light-v2 g-brd-primary--active g-color-white g-bg-primary--active g-font-size-12 rounded g-pa-5" 
+            href="?page={{videos.previous_page_number}}">
+            &laquo;
+          </a>
+        </li>
+        {% else %}
+        <li class="list-inline-item">
+          <a class="u-pagination-v1__item g-width-30 g-height-30 g-brd-transparent g-brd-primary--hover g-brd-primary--active g-color-secondary-dark-v1 g-bg-primary--active g-font-size-12 rounded g-pa-5" 
+             href="#!">
+            &laquo;
+          </a>
+        </li>
+{% endif %}
+        {% for i in videos.paginator.page_range %}
+              {% if videos.number == i %}
+        <li class="list-inline-item g-hidden-xs-down">
+          <a class="u-pagination-v1__item g-width-30 g-height-30 g-brd-transparent g-brd-primary--hover g-brd-primary--active g-color-secondary-dark-v1 g-bg-primary--active g-font-size-12 rounded g-pa-5">
+            {{i}}
+          </a>
+        </li>
+              {% else %}
+
+        <li class="list-inline-item g-hidden-xs-down">
+          <a class="u-pagination-v1__item g-width-30 g-height-30 g-brd-transparent g-brd-primary--hover g-brd-primary--active g-color-secondary-dark-v1 g-bg-primary--active g-font-size-12 rounded g-pa-5" 
+             href="?page={{i}}">
+             {{i}}
+          </a>
+        </li>
+              {% endif %}
+        {% endfor %}
+        <li class="list-inline-item">
+          <span class="g-width-30 g-height-30 g-color-gray-dark-v5 g-font-size-12 rounded g-pa-5">
+            ...
+          </span>
+        </li>
+
+<!-- next arrow -->
+      {% if videos.has_next  %}
+        <li class="list-inline-item g-hidden-xs-down">
+          <a class="u-pagination-v1__item g-width-30 g-height-30 g-brd-transparent g-brd-primary--hover g-brd-primary--active g-color-secondary-dark-v1 g-bg-primary--active g-font-size-12 rounded g-pa-5" 
+             href="?page={{videos.next_page_number}}">
+            &raquo;
+          </a>
+        </li>
+        {% else %}
+        <li class="list-inline-item">
+          <a class="u-pagination-v1__item g-brd-secondary-light-v2 g-brd-primary--hover g-color-gray-dark-v5 g-color-primary--hover g-font-size-12 rounded g-px-15 g-py-5 g-ml-15" href="#!" aria-label="Next">
+            <span aria-hidden="true">
+              Next
+              <i class="ml-2 fa fa-angle-right"></i>
+            </span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+{% endif %}
+    </nav>
+  </div>
+  <!-- End Pagination -->
+
+</section>

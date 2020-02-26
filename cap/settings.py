@@ -17,9 +17,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import psycopg2
 
-DATABASE_URL = os.environ['DATABASE_URL']
+# DATABASE_URL = os.environ['DATABASE_URL']
 
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,7 +35,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n!62q7_d!apjkfpz-4nn=q9%4u65f&#^-(^+xt5dl2u#+jr-bc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','ayci.herokuapp.com']
 
@@ -44,13 +44,13 @@ ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','ayci.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'Farm',
     'account',
-    'processor',
-    'investmanager',
+    'articles',
     'crispy_forms',
+    'pages',
     'whitenoise.runserver_nostatic',
     'searchableselect',
+    'django_simple_tags',
     'django.contrib.postgres.search',
     'django_extensions',
     'django.contrib.auth',
@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     
 ]
 
@@ -103,15 +104,15 @@ WSGI_APPLICATION = 'cap.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'ay',
-#         'USER' : 'Inoxevious Greats',
-#         'PASSWORD': 'Greatse@1#',
-#         'HOST': 'localhost',
-#         }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ay',
+        'USER' : 'Inoxevious Greats',
+        'PASSWORD': 'Greatse@1#',
+        'HOST': 'localhost',
+        }
+}
 # DATABASES = {}
 # db_from_env = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'].update(db_from_env)
@@ -168,7 +169,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'ay/static')
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 # Gmail SMTP Server
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
@@ -180,6 +183,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # This should already be in your settings.py
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 # This is new
-del DATABASES['default']['OPTIONS']['sslmode']
+# del DATABASES['default']['OPTIONS']['sslmode']
