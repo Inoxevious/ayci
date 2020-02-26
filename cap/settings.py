@@ -37,7 +37,7 @@ SECRET_KEY = 'n!62q7_d!apjkfpz-4nn=q9%4u65f&#^-(^+xt5dl2u#+jr-bc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','ayci.herokuapp.com']
+ALLOWED_HOSTS = ['ayci.herokuapp.com']
 
 
 # Application definition
@@ -182,6 +182,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # This should already be in your settings.py
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 # This is new
-# del DATABASES['default']['OPTIONS']['sslmode']
+del DATABASES['default']['OPTIONS']['sslmode']
