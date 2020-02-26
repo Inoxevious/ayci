@@ -21,6 +21,7 @@ class Country(models.Model):
 class AccountUser(models.Model):
     role = models.CharField(null=True ,blank=True, max_length=70)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    writer = models.BooleanField(default=False)
     email_confirmed = models.BooleanField(default=False)
     country = models.CharField(null=True ,blank=True, max_length=70)
     address =models.TextField(null=True ,blank=True )

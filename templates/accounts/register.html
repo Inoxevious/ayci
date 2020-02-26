@@ -53,6 +53,22 @@
                     </div>
                    
                     <div class="form-group">
+                      Article Writer
+                      <select name="writer" class="form-control">
+                        <option selected="true" disabled="disabled">Article Writer</option>
+                        {% for key,value in writer_choices.items %}
+                        <option value="{{ key }}"
+  
+                        {% if key == values.writer %}
+                          selected
+                        {% endif %}
+                        
+                        >{{ value }}</option>
+                      {% endfor %}
+                      </select>
+                    </div>
+
+                    <div class="form-group">
                       Delegation Role
                       <select name="role" class="form-control">
                         <option selected="true" disabled="disabled">Delegation Role</option>

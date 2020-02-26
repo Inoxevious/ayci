@@ -6,16 +6,12 @@
      <!-- Navigation -->
       <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
         <ul class="navbar-nav g-font-weight-600">
-          <!-- Home - Submenu -->
-         
-          <li class="nav-item hs-has-sub-menu g-mr-10--lg g-mr-20--xl">
-            <a id="nav-link--home" class="nav-link text-uppercase g-color-primary--hover g-px-0" href="#!"
-               aria-haspopup="true"
-               aria-expanded="false"
-               aria-controls="nav-submenu--home">
+          <li class="nav-item g-mx-10--lg g-mx-20--xl">
+            <a id="nav-link--pages" class="nav-link text-uppercase g-color-primary--hover g-px-0" href="{% url 'index' %}">
               home
             </a>
           </li>
+         
           <!-- End Home - Submenu -->
 
                     <!-- Mega Menu Item -->
@@ -74,13 +70,6 @@
           <!-- End Mega Menu Item -->
 
 
-          <!-- Main -->
-          <li class="nav-item g-mx-10--lg g-mx-20--xl">
-            <a id="nav-link--pages" class="nav-link text-uppercase g-color-primary--hover g-px-0" href="{% static 'index.html">
-              Main
-            </a>
-          </li>
-          <!-- End Main -->
           
         </ul>
       </div>

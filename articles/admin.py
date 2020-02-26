@@ -1,8 +1,17 @@
 from django.contrib import admin
+from account.models import AccountUser
 from .models import Article, Author, Gallery, Comment
+from django.contrib.auth.models import User
 # Register your models here.
 
 class ArticleAdmin(admin.ModelAdmin):
+    def get_queryset(self, request):
+        qs = super(ArticleAdmin, self).get_queryset(request)
+        if request.user.is_staff:
+            return qs
+        return qs.filter(author=request.user)
+
+
     list_display = ('id','title', 'is_published',
                     'pub_date','author')
     list_display_links = ('id','title')

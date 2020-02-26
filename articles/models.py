@@ -1,13 +1,13 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
-
+from account.models import AccountUser
 # Create your models here.
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    photo = models.ImageField(upload_to = "photos/%Y/%m/%d")
+    photo = models.ImageField(upload_to = "photos/%Y/%m/%d",blank = True)
     description = models.TextField(blank=True)
-    phone = models.CharField(max_length=20)
+    phone = models.CharField(max_length=20,blank = True)
     is_member = models.BooleanField(default=False)
     hire_date = models.DateTimeField(default = datetime.now,blank = True)
     def __str__(self):
@@ -15,7 +15,7 @@ class Author(models.Model):
 
 
 class Article(models.Model):
-    author  = models.ForeignKey(Author,on_delete = models.DO_NOTHING)
+    author  = models.ForeignKey(AccountUser,on_delete = models.DO_NOTHING)
     title = models.CharField(max_length = 200)
     summary = models.TextField(blank=True)
     description = models.TextField(blank=True)

@@ -71,6 +71,11 @@ role_choices = {
 'secretary':'secretary',
 
 }
+writer_choices = {
+  'yes' : 'yes',
+  'no' : 'no',
+}
+
 price_choices={
  '100000':'$100,000',
   '200000':'$200,000',

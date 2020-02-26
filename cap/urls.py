@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 
-from account.views import signup, register
+from account.views import signup, register, login, logout
 from pages.views import index
 
 from django.conf import settings
@@ -34,6 +34,8 @@ urlpatterns = [
     # path('', signup, name='signup'),
     path('signup', signup, name='signup'),
     path('register', register, name='register'),
+    path('login', login, name='login'),
+    path('logout', logout, name='logout'),
    
     
     
@@ -42,7 +44,7 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('pages/', include('pages.urls')),
     # urls to applications dashboards
-    path('accounts/', include('django.contrib.auth.urls')),
+    
     url('^searchableselect/', include('searchableselect.urls')),
     
     

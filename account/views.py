@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import AccountUser
+from articles.models import Author
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
@@ -19,7 +20,7 @@ from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
-from  . choices import price_choices, bedroom_choices, state_choices, countries_choices, role_choices
+from  . choices import price_choices, bedroom_choices, state_choices, countries_choices, role_choices, writer_choices
 
 # Create your views here.
 # 
@@ -41,8 +42,13 @@ def login(request):
 
        if user:
           auth.login(request,user)
-          messages.success(request,"You are now logged in.")
-          return redirect('index')
+          acc = AccountUser.objects.get(user_id = user.id)
+          if acc.writer == True:
+              return redirect('admin/')
+          else:
+
+              messages.success(request,"You are now logged in.")
+              return redirect('index')
        else:
             messages.error(request,"Invalid Credentials")
             return redirect('login')       
@@ -67,6 +73,14 @@ def register(request):
         password2 = request.POST['password2']
         country = request.POST['country']
         role = request.POST['role']
+        postwriter = request.POST['writer']
+
+        if postwriter == 'yes':
+            writer = True
+        
+        
+        updated_writer = writer
+        print('WRITERRRRRR:', writer)
 
         # Check if passwords match
         if password == password2:
@@ -83,7 +97,7 @@ def register(request):
                     
                     user = User.objects.create_user(username = username,
                     password = password,email=email,first_name = first_name,
-                    last_name = last_name)
+                    last_name = last_name )
                     user.save()
 
                     user = User.objects.get(email = email)
@@ -91,7 +105,14 @@ def register(request):
                     acc.role = role
                     acc.country = country
                     acc.email = email
+                    acc.writer = updated_writer
                     acc.save()
+
+                    if updated_writer == True:
+                        user.is_staff = True 
+                        user.save()  
+                     
+
 
 
 
@@ -99,7 +120,7 @@ def register(request):
                     # Login after register
                     auth.login(request,user)
                     messages.success(request,"You are now logged in.")
-                    return redirect('index')
+                    return redirect('login')
 
                     # # Login manually 
                     # messages.success(request,"You can now log in.")
@@ -111,6 +132,7 @@ def register(request):
         context = {
             'countries_choices' :countries_choices,
             'role_choices': role_choices,
+            'writer_choices' : writer_choices,
         }
         return render(request,'accounts/register.html' , context)
 
