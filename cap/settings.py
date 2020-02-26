@@ -112,12 +112,8 @@ WSGI_APPLICATION = 'cap.wsgi.application'
 #         'HOST': 'localhost',
 #         }
 # }
-# DATABASES = {}
-# db_from_env = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'].update(db_from_env)
 
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -159,7 +155,7 @@ STATIC_URL = '/static/'
 #location where django collect all static files
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 # location where you will store your static files
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'Farm/static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')
 ]
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
