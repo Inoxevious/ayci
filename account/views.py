@@ -74,6 +74,9 @@ def register(request):
         country = request.POST['country']
         role = request.POST['role']
         postwriter = request.POST['writer']
+        
+        writer = False
+        updated_writer = writer
 
         if postwriter == 'yes':
             writer = True
