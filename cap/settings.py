@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'pages',
     'whitenoise.runserver_nostatic',
     'searchableselect',
-    'django_simple_tags',
     'django.contrib.postgres.search',
     'django_extensions',
     'django.contrib.auth',
