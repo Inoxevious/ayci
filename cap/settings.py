@@ -112,9 +112,9 @@ DATABASES = {
         'HOST': 'localhost',
         }
 }
-# DATABASES = {}
-# db_from_env = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'].update(db_from_env)
+DATABASES = {}
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
@@ -154,10 +154,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# django_heroku.settings(locals())
-# This is new
-# del DATABASES['default']
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
 #location where django collect all static files
