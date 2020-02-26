@@ -164,7 +164,7 @@ STATIC_URL = '/static/'
 #location where django collect all static files
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 # location where you will store your static files
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'ay/static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'Farm/static')
 ]
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
@@ -175,10 +175,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Gmail SMTP Server
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'mpasiinnocent@gmail.com'
-EMAIL_HOST_PASSWORD = 'Greatse@1#'
+EMAIL_HOST_USER = 'thirdproverb@gmail.com'
+EMAIL_HOST_PASSWORD = 'bQBqtLIRZ9XD4EGM'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 

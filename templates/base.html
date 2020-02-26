@@ -1,0 +1,311 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <!-- Title -->
+    <title>{{user.user_class}}</title>
+  
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/bootstrap.min.css' %}">
+    <!-- CSS Global Icons -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/icon-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/icon-line/css/simple-line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/icon-etlinefont/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/icon-line-pro/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/icon-hs/style.css' %}">
+  
+    <link rel="stylesheet" href="{% static 'assets/assets/vendor/hs-admin-icons/hs-admin-icons.css' %}">
+  
+    <link rel="stylesheet" href="{% static 'assets/vendor/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css' %}">
+  
+    <link rel="stylesheet" href="{% static 'assets/assets/vendor/flatpickr/dist/css/flatpickr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/assets/vendor/bootstrap-select/css/bootstrap-select.min.css' %}">
+  
+    <link rel="stylesheet" href="{% static 'assets/assets/vendor/chartist-js/chartist.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fancybox/jquery.fancybox.min.css' %}">
+  
+    <link rel="stylesheet" href="{% static 'assets/vendor/hamburgers/hamburgers.min.css' %}">
+  
+    <!-- CSS Unify -->
+    <link rel="stylesheet" href="{% static 'assets/assets/css/unify-admin.css' %}">
+  
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css' %}" />
+  
+  <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script><!-- JS Global Compulsory -->
+  <script type="text/javascript"  src="{% static 'assets/assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/vendor/jquery-migrate/jquery-migrate.min.js' %}"></script>
+  
+  <script type="text/javascript"  src="{% static 'assets/vendor/popper.js' %}/popper.min.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/vendor/bootstrap/bootstrap.min.js' %}"></script>
+  
+  <script type="text/javascript"  src="{% static 'assets/vendor/cookiejs/jquery.cookie.js' %}"></script>
+  
+  
+  <!-- jQuery UI Core -->
+  <script type="text/javascript"  src="{% static 'assets/vendor/jquery-ui/ui/widget.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/vendor/jquery-ui/ui/version.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/vendor/jquery-ui/ui/keycode.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/vendor/jquery-ui/ui/position.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/vendor/jquery-ui/ui/unique-id.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/vendor/jquery-ui/ui/safe-active-element.js' %}"></script>
+  
+  <!-- jQuery UI Helpers -->
+  <script type="text/javascript"  src="{% static 'assets/vendor/jquery-ui/ui/widgets/menu.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/vendor/jquery-ui/ui/widgets/mouse.js' %}"></script>
+  
+  <!-- jQuery UI Widgets -->
+  <script type="text/javascript"  src="{% static 'assets/vendor/jquery-ui/ui/widgets/datepicker.js' %}"></script>
+  
+  <!-- JS Plugins Init. -->
+  <script type="text/javascript"  src="{% static 'assets/vendor/appear.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/vendor/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/vendor/flatpickr/dist/js/flatpickr.min.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/vendor/chartist-js/chartist.min.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/vendor/fancybox/jquery.fancybox.min.js' %}"></script>
+  
+  <!-- JS Unify -->
+  <script type="text/javascript"  src="{% static 'assets/js/hs.core.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/js/components/hs.side-nav.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/js/helpers/hs.hamburgers.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/js/components/hs.range-datepicker.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/js/components/hs.datepicker.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/js/components/hs.dropdown.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/js/components/hs.scrollbar.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/js/helpers/hs.focus-state.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/js/components/hs.area-chart.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/js/components/hs.donut-chart.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/js/components/hs.bar-chart.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/js/components/hs.pie-chart.js' %}"></script>
+  <script type="text/javascript"  src="{% static 'assets/assets/js/components/hs.popup.js' %}"></script>
+  <!-- JS Custom -->
+  <script type="text/javascript"  src="{% static 'assets/js/custom.js' %}"></script>
+  
+  <!-- JS Plugins Init. -->
+  <script type="text/javascript" >
+    $(document).on('ready', function () {
+      // initialization of custom select
+      $('.js-select').selectpicker();
+  
+      // initialization of hamburger
+      $.HSCore.helpers.HSHamburgers.init('.hamburger');
+  
+      // initialization of charts
+      $.HSCore.components.HSAreaChart.init('.js-area-chart');
+      $.HSCore.components.HSDonutChart.init('.js-donut-chart');
+      $.HSCore.components.HSBarChart.init('.js-bar-chart');
+      $.HSCore.components.HSPieChart.init('.js-pie-chart');
+  
+      // initialization of sidebar navigation component
+      $.HSCore.components.HSSideNav.init('.js-side-nav', {
+        afterOpen: function() {
+          setTimeout(function() {
+            $.HSCore.components.HSAreaChart.init('.js-area-chart');
+            $.HSCore.components.HSDonutChart.init('.js-donut-chart');
+            $.HSCore.components.HSBarChart.init('.js-bar-chart');
+            $.HSCore.components.HSPieChart.init('.js-pie-chart');
+          }, 400);
+        },
+        afterClose: function() {
+          setTimeout(function() {
+            $.HSCore.components.HSAreaChart.init('.js-area-chart');
+            $.HSCore.components.HSDonutChart.init('.js-donut-chart');
+            $.HSCore.components.HSBarChart.init('.js-bar-chart');
+            $.HSCore.components.HSPieChart.init('.js-pie-chart');
+          }, 400);
+        }
+      });
+  
+      // initialization of range datepicker
+      $.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker, #rangeDatepicker2, #rangeDatepicker3');
+  
+      // initialization of datepicker
+      $.HSCore.components.HSDatepicker.init('#datepicker', {
+        dayNamesMin: [
+          'SU',
+          'MO',
+          'TU',
+          'WE',
+          'TH',
+          'FR',
+          'SA'
+        ]
+      });
+  
+      // initialization of HSDropdown component
+      $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+  
+      // initialization of custom scrollbar
+      $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+  
+      // initialization of popups
+      $.HSCore.components.HSPopup.init('.js-fancybox', {
+        btnTpl: {
+          smallBtn: '<button data-fancybox-close class="btn g-pos-abs g-top-25 g-right-30 g-line-height-1 g-bg-transparent g-font-size-16 g-color-gray-light-v3 g-brd-none p-0" title=""><i class="hs-admin-close"></i></button>'
+        }
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const ctx = document.getElementById("marketperformancechart").getContext('2d');
+           my_chart = new Chart(ctx, {
+               type: 'line',
+               data: {
+                   labels: ['Grade A','Grade B', 'Grade C', 'Grade D', 'Grade E'],
+                   datasets: [{
+                       label: '{{ farm_produce }}',
+                       data:[{{ chart_data.0.grade_e.1 }}, {{ chart_data.0.grade_d.1 }}, 
+                            {{ chart_data.0.grade_c.1 }}, {{ chart_data.0.grade_b.1 }}, 
+                            {{ chart_data.0.grade_a.1 }}],
+    
+                      backgroundColor: [
+                          'rgba(255, 99, 132, 0.2)',
+                          'rgba(54, 162, 235, 0.2)',
+                          'rgba(255, 206, 86, 0.2)',
+                          'rgba(75, 192, 192, 0.2)',
+                          'rgba(153, 102, 255, 0.2)',
+    
+                            ],
+                      borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                          'rgba(54, 162, 235, 1)',
+                          'rgba(255, 206, 86, 1)',
+                          'rgba(75, 192, 192, 1)',
+                          'rgba(153, 102, 255, 1)',
+    
+    
+                      ],
+                      borderWidth: 1,
+                      order: 3
+                   }, 
+                   {
+    
+    
+                      label: 'Ground Nuts ',
+                      data: [{{ chart_data.0.grade_a.1 }}, {{ chart_data.0.grade_b.1 }}, 
+                            {{ chart_data.0.grade_c.1 }}, {{ chart_data.0.grade_d.1 }}, 
+                            {{ chart_data.0.grade_e.1 }}],
+                      type: 'line',
+                // // // this dataset is drawn on top
+                      order: 2,
+                   },
+                   {
+    
+    
+                  label: 'Tomatoes ',
+                  data: [{{ chart_data.0.grade_c.1 }}, {{ chart_data.0.grade_e.1 }}, 
+                        {{ chart_data.0.grade_b.1 }}, {{ chart_data.0.grade_a.1 }}, 
+                        {{ chart_data.0.grade_d.1 }}],
+                  type: 'line',
+                // // // this dataset is drawn on top
+                  order: 1,
+  }],
+               },
+    
+               options: {
+                   scales: {
+                        yAxis: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                   }
+               }
+    
+           })
+    
+     
+    });
+    </script>
+
+  
+  </head>
+  
+
+	<body>
+	  <main >
+    <!-- Header -->
+    <header id="js-header" class="u-header u-header--static">
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+        <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
+          <div class="container">
+            <!-- Responsive Toggle Button -->
+            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-minus-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+              <span class="hamburger hamburger--slider">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+              </span>
+              </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+
+            <!-- Logo -->
+       <a href="" class="navbar-brand d-flex">
+              <img src="{% static 'logo.png' %}" height="120px" />
+            </a>
+            <!-- End Logo -->
+              </ul>
+            </div>
+            <!-- End Navigation -->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
+
+   {% block content %}
+
+   
+   {% endblock %}
+
+    <!-- Call to Action -->
+    <section class="g-bg-primary">
+      <div class="container g-pt-25 g-pb-10">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-sm-6 col-md-8 g-mb-15">
+           
+          </div>
+
+          <div class="col-sm-6 col-md-4 g-mb-15">
+            <div class="input-group rounded-0">
+              
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Call to Action -->
+
+    <!-- Footer -->
+    <div id="contacts-section" class="g-bg-black-opacity-0_9 g-color-white-opacity-0_8 g-py-60">
+  
+    </footer>
+    <!-- End Copyright Footer -->
+    <a class="js-go-to u-go-to-v1" href="#" data-type="fixed" data-position='{
+     "bottom": 15,
+     "right": 15
+   }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
+      <i class="hs-icon hs-icon-arrow-top"></i>
+    </a>
+	  </main>
+
+	  <!-- JS Global Compulsory -->
+
+	</body>
+</html>
