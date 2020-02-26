@@ -59,6 +59,8 @@ def logout(request):
 def register(request):
     
     if request.method == "POST":
+        dcountry = 'africa'
+        drole = 'member'
         # Get form values
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
@@ -66,9 +68,9 @@ def register(request):
         email = request.POST['email']
         password = request.POST['password']
         password2 = request.POST['password2']
-        country = request.POST['country']
-        role = request.POST['role']
-        postwriter = request.POST['writer']
+        country = request.POST['country', dcountry ]
+        role = request.POST['role', drole]
+        postwriter = request.POST['writer', False]
         
         writer = False
         updated_writer = writer
@@ -112,7 +114,7 @@ def register(request):
                     if updated_writer == True:
                         user.is_staff = True 
                         user.save()  
-                        
+
                     # Login after register
                     auth.login(request,user)
                     messages.success(request,"You are now logged in.")
