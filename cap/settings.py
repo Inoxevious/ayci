@@ -37,7 +37,7 @@ SECRET_KEY = 'n!62q7_d!apjkfpz-4nn=q9%4u65f&#^-(^+xt5dl2u#+jr-bc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ayci.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'articles',
     'crispy_forms',
     'pages',
-    'whitenoise.runserver_nostatic',
     'searchableselect',
     'django.contrib.postgres.search',
     'django_extensions',
@@ -65,7 +64,6 @@ MIDDLEWARE = [
     
     
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -170,7 +168,7 @@ EMAIL_HOST_USER = 'thirdproverb@gmail.com'
 EMAIL_HOST_PASSWORD = 'bQBqtLIRZ9XD4EGM'
 EMAIL_USE_TLS = True
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 
 # This should already be in your settings.py
