@@ -1,4 +1,4 @@
-import django_heroku
+
 import dj_database_url
 import dotenv
 
@@ -174,6 +174,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # This should already be in your settings.py
-django_heroku.settings(locals())
+
 # This is new
 del DATABASES['default']['OPTIONS']['sslmode']
